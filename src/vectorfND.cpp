@@ -4,31 +4,31 @@
 typedef unsigned int uint;
 
 
-vectorfND::vectorfND(std::vector<float> v)
+Geometryf::vectorfND::vectorfND(std::vector<float> v)
 {
 	for (uint i = 0; i < v.size(); i++)
 		this->push_back(v.at(i));
 }
 
-vectorfND::vectorfND()
+Geometryf::vectorfND::vectorfND()
 {
 	*this = vector<float>();
 }
 
-float vectorfND::mag()
+float Geometryf::vectorfND::mag()
 {
 	float sum = 0;
 	for (uint i = 0; i < this->size(); i++)
 		sum += (*this)[i]* (*this)[i];
 	return sqrt(sum);
 }
-void vectorfND::print()
+void Geometryf::vectorfND::print()
 {
 	for (uint i = 0; i < this->size(); i++)
 		std::cout << (*this)[i] << " ";
 }
 
-vectorfND vectorfND::operator+(vectorfND & v1)
+Geometryf::vectorfND Geometryf::vectorfND::operator+(vectorfND & v1)
 {
 	uint diff;
 	vectorfND returnV;
@@ -49,13 +49,13 @@ vectorfND vectorfND::operator+(vectorfND & v1)
 			returnV.push_back(this->at(i));
 	}
 
-	
 
-	
+
+
 	return returnV;
 }
 
-vectorfND vectorfND::operator-(vectorfND & v1)
+Geometryf::vectorfND Geometryf::vectorfND::operator-(vectorfND & v1)
 {
 	uint diff;
 	vectorfND returnV;
@@ -78,11 +78,11 @@ vectorfND vectorfND::operator-(vectorfND & v1)
 	return returnV;
 }
 
-vectorfND vectorfND::abs()
+Geometryf::vectorfND Geometryf::vectorfND::abs()
 {
 	vectorfND absVec = vectorfND();
 	for (uint i = 0; i < this->size(); i++)
 		absVec.push_back(fabs(this->at(i)));
-	
+
 	return absVec;
 }

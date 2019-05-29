@@ -2,17 +2,20 @@
 #include "DrawableObjectf.h"
 #include "Pointf.h"
 #include "Linef.h"
+namespace Geometryf
+{
 class Polygonf :
 	private DrawableObjectf
 {/* Dimensionenzahl + 1 Ecken => Punkt-Array*/
 public:
-	std::vector<Pointf> corners;
-	std::vector<Linef> borders;
-	Polygonf(std::vector<Pointf> corners_);
-	Polygonf(std::vector<Linef> borders_);
+	std::vector<Geometryf::Pointf> corners;
+	std::vector<Geometryf::Linef> borders;
+	Polygonf(std::vector<Geometryf::Pointf> corners_);
+	Polygonf(std::vector<Geometryf::Linef> borders_);
 	Polygonf(); //creates a 2Dimensional triangle
 	~Polygonf();
-	Linef getLongestBorder(void);
-	Linef getShortestBorder(void);
-	Linef getBorderAt(uint i);
+	Geometryf::Linef getLongestBorder(void);
+	Geometryf::Linef getShortestBorder(void);
+	Geometryf::Linef getBorderAt(uint i);
 };
+}

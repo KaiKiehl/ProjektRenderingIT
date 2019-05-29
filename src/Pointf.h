@@ -1,15 +1,16 @@
 #pragma once
 #include "DrawableObjectf.h"
 
-
+namespace Geometryf
+{
 class Pointf :
 	private DrawableObjectf
 {
 public:
-	vectorfND location;
-	Pointf(vectorfND location_);
+	Geometryf::vectorfND location;
+	Pointf(Geometryf::vectorfND location_);
 	Pointf(std::vector<float> v);
 	Pointf();
 
 };
-
+}
