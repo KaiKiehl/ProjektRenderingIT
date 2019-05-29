@@ -12,5 +12,7 @@ public:
 	Polygonf(std::vector<Linef> borders_);
 	Polygonf(); //creates a 2Dimensional triangle
 	~Polygonf();
+	Linef getLongestBorder(void);
+	Linef getShortestBorder(void);
+	Linef getBorderAt(uint i);
 };
-

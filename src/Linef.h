@@ -10,7 +10,7 @@ public:
 	Linef();
 	Linef(Pointf p0_, Pointf p1_);
 	~Linef();
-	float GetLength();
+	float Length();
 	Pointf Getp0(void);
 	void Setp0(Pointf p);
 	Pointf Getp1(void);

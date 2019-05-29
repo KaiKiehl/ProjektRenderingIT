@@ -17,6 +17,3 @@ Pointf::Pointf(std::vector<float> v)
 Pointf::Pointf()
 {
 }
-
-
-

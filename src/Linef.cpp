@@ -15,7 +15,7 @@ Linef::~Linef()
 {
 }
 
-float Linef::GetLength()
+float Linef::Length()
 {
 	vectorfND deltaDim = p0.location - p1.location;
 	deltaDim = deltaDim.abs();
