@@ -15,3 +15,7 @@ Geometryf::DrawableObjectf::DrawableObjectf(Geometryf::vectorfND location_, Geom
 Geometryf::DrawableObjectf::~DrawableObjectf()
 {
 }
+void Draw(screen *scrn)
+{
+
+}

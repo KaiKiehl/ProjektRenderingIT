@@ -1,5 +1,6 @@
-#pragma once
-#include <vector>
+#ifndef VFND
+    #define VFND
+#include "res.h"
 namespace Geometryf
 {
 	class vectorfND :
@@ -17,3 +18,4 @@ public:
 };
 
 } // namespace Geometry
+#endif

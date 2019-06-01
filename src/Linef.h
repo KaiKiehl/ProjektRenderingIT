@@ -1,6 +1,9 @@
-#pragma once
-#include "DrawableObjectf.h"
-#include "Pointf.h"
+#ifndef LNF
+    #define LNF
+	#include "DrawableObjectf.h"
+	#include "Pointf.h"
+	#include "res.h"
+
 namespace Geometryf
 {
 class Linef :
@@ -17,5 +20,7 @@ public:
 	void Setp0(Geometryf::Pointf p);
 	Geometryf::Pointf Getp1(void);
 	void Setp1(Geometryf::Pointf p);
+	void Draw(screen *scrn);
 };
 }
+#endif

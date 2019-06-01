@@ -1,16 +1,14 @@
-#include "vectorfND.h"
-#include "Linef.h"
-#include "Polygonf.h"
-#include <iostream>
+#include "res.h"
 
 
 int main()
 {
-	Geometryf::Polygonf poly0 = Geometryf::Polygonf({ Geometryf::Pointf({5,2}),Geometryf::Pointf({0,0}),Geometryf::Pointf({10,10})});
-	Geometryf::Polygonf poly1 = Geometryf::Polygonf({ Geometryf::Linef(),Geometryf::Linef(), Geometryf::Linef()});
+/*	Geometryf::Polytopef poly0 = Geometryf::Polytopef({ Geometryf::Pointf({0,0,0}),Geometryf::Pointf({10,0,0}),Geometryf::Pointf({10,10,0}),Geometryf::Pointf({10,10,10}),Geometryf::Pointf({0,10,0}),Geometryf::Pointf({0,10,10}),Geometryf::Pointf({0,0,10})});
 
-	std::cout << poly0.getBorderAt(0).Length() << "\n";
-	std::cout << poly0.getBorderAt(1).Length() << "\n";
-std::cout << poly0.getBorderAt(2).Length() << "\n";
+for (uint i = 0; i < poly0.getBorderCount(); i++)
+{
+std::cout << poly0.getBorderAt(i).Length() << "\n";
+}
+std::cout << poly0.getVolume();*/
 	return 0;
 }
