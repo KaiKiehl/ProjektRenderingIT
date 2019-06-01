@@ -6,7 +6,7 @@
 namespace Geometryf
 {
 class Polytopef :
-	private DrawableObjectf
+	public DrawableObjectf
 {/* Dimensionenzahl + 1 Ecken => Punkt-Array*/
 public:
 	std::vector<Geometryf::Pointf> corners;

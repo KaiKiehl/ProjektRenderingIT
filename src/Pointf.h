@@ -6,7 +6,7 @@
 namespace Geometryf
 {
 class Pointf :
-	private DrawableObjectf
+	public DrawableObjectf
 {
 private:
 

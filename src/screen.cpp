@@ -3,25 +3,27 @@
 screen::screen(uint xsize,uint ysize)
 {
     scrn.reserve(xsize);
+    std::vector<bool> row;
     for (uint i = 0; i < xsize; i++)
     {
-        scrn[i].reserve(ysize);
         for (uint j = 0; j < ysize; j++)
         {
-            scrn[i][j] = false;
+            row.push_back(false);
         }
+        scrn.push_back(row);
+        row.clear();
     }
 
 }
-
 screen::~screen()
 {
+
 }
 void screen::on(Geometryf::vf2d v)
 {
     scrn[v.x][v.y] = true;
 }
-void screen::on(const float x, const float y)
+void screen::on(float x, float y)
 {
     scrn[x][y] = true;
 }
@@ -29,7 +31,19 @@ void screen::off(Geometryf::vf2d v)
 {
     scrn[v.x][v.y] = false;
 }
-void screen::off(const float x, const float y)
+void screen::off(float x, float y)
 {
     scrn[x][y] = false;
+}
+int screen::getXsize(void)
+{
+    return scrn.size();
+}
+int screen::getYsize(void)
+{
+    return scrn[0].size();
+}
+bool screen::at(int x,int y)
+{
+    return scrn[x][y];
 }

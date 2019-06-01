@@ -20,18 +20,22 @@ Geometryf::Pointf::Pointf()
 
 Geometryf::vf2d Geometryf::Pointf::to2D(void)
 {
-	float pos2d[2];
+	vf2d v;
 	if (location.size() > 2)
-		float pos2d[2] = {location[0], location[1]};
+	{
+		v.x = location[0];
+		v.y = location[1];
+	}
 	else
-		float pos2d[1] = {location[0]};
+		v.x = location[0];
 
 for (uint  i = 2; i < location.size(); i++)
 {
-	pos2d[0] = pos2d[0]+location[i]/i;
+	v.x += location[i]/i;
 	if (location.size() > 2)
-		pos2d[1] = pos2d[0]+location[i]/i;
+		v.y += location[i]/i;
 }
+return v;
 }
 
 void Geometryf::Pointf::Draw(screen *scrn)

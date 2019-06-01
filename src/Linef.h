@@ -7,7 +7,7 @@
 namespace Geometryf
 {
 class Linef :
-	private DrawableObjectf
+	public DrawableObjectf
 {
 private:
 	Geometryf::Pointf p0, p1;
