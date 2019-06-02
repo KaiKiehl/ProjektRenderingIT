@@ -43,6 +43,10 @@ float Geometryf::Linef::Length()
 	}
 void Geometryf::Linef::Draw(screen *scrn)
 {
+  if (Linef::Length())
+  {
+
+
 	float x1 = p0.to2D().x, x2 = p1.to2D().x, y1 = p0.to2D().y, y2 = p1.to2D().y;
         // Bresenham's line algorithm
   bool steep = ((y2 - y1) > fabs(x2 - x1));
@@ -84,5 +88,5 @@ void Geometryf::Linef::Draw(screen *scrn)
         y += ystep;
         error += dx;
     }
-  }
+  }}
 }

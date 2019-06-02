@@ -1,16 +1,47 @@
 #include "Polytopef.h"
-
+#include <algorithm>
 
 
 
 Geometryf::Polytopef::Polytopef(std::vector<Geometryf::Pointf> corners_): corners(corners_) //Each corner needs N connections (when N is it's dimensionality)
-{
-
-	for(uint i = 0; i < corners.size()-1; i++)
+{//für jede Dimesion benötigt ein Punkt eine Verbindung. Es wird von einem Punkt ausgegangen, dann die Punkte aufgezählt, die mit diesem verbunden werden, dann die Punkte, die mit diesen verbunden werden
+	if (!corners.empty())
 	{
-		borders.push_back(Linef(corners.at(i),corners.at(i+1)));
+
+		for (uint i = 0; i < corners.size()-1; i++)
+		{
+			borders.push_back(Linef({corners[i], corners[i+1]}));
+		}
+		borders.push_back(Linef(corners[0], corners.at(corners.size()-1)));
+
+		/*float dimensionality =corners[0].location.size();
+
+		if (dimensionality< corners.size()){// ein N-Dimensionales Objekt hat mindestens N+1 Ecken
+			for(uint k = 1; k < corners.size();k *= dimensionality){
+
+				for(uint i = k-1; i < k+dimensionality-2; i++)
+					for(uint j = 1; j < dimensionality; j++)
+					{
+						//if(!(std::find(borders.begin(), borders.end(), Linef{corners[i],corners[i+j]}) != borders.end()&&std::find(borders.begin(), borders.end(), Linef{corners[i+j],corners[i]}) != borders.end()))
+							borders.push_back(Linef{corners[i+k-1],corners[i+j+k-1]});
+					}
+
+					//connect p1,p2,...pN-1,pN to each N-1 other points, but only if no connection exists already
+				//do this again with each  of the new points. Repeat until finished.
+			}
+
+			for(uint i = 0; i < corners.size()-1; i++)
+			{
+				borders.push_back(Linef(corners.at(i),corners.at(i+1)));
+			}
+			borders.push_back(Linef(corners.at(corners.size()-1),corners.at(0)));
+			}
+		else
+		{
+			std::cout << "Incomplete polytope (not enough corners for its dimensionality)";
+		}*/
+
 	}
-	borders.push_back(Linef(corners.at(corners.size()-1),corners.at(0)));
 }
 
 Geometryf::Polytopef::Polytopef()
